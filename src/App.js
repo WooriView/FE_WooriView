@@ -17,7 +17,7 @@ function App() {
         >
           Learn React
         </a>
-        <text>deploy test</text>
+        <text>deploy test front Cloud</text>
       </header>
     </div>
   );

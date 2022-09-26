@@ -17,6 +17,7 @@ module.exports = {
       version: "detect",
     },
   },
+
   ignorePatterns: [".eslintrc.js"],
   rules: {
     quotes: ["off", "single"],
@@ -32,6 +33,19 @@ module.exports = {
     "react/prop-types": "off",
     "react/require-default-props": "off",
     "react/no-unsafe-optional-chaining": "off",
+    "import/order": [
+      "error",
+      {
+        pathGroups: [
+          {
+            pattern: "react",
+            group: "builtin",
+            position: "before",
+          },
+        ],
+        pathGroupsExcludedImportTypes: ["react"],
+      },
+    ],
     "jsx-a11y/label-has-associated-control": [
       "error",
       {
@@ -48,6 +62,7 @@ module.exports = {
         },
       },
     ],
+
     "operator-linebreak": ["error", "after", { overrides: { ":": "before" } }],
     "object-curly-newline": "off",
   },

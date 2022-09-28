@@ -4,6 +4,7 @@ import Mainpage from "./pages/MainPage";
 import Header from "./components/Header";
 
 function App() {
+  // 깃푸쉬 확인
   return (
     <BrowserRouter>
       <Header />

@@ -3,10 +3,14 @@ import "./index.css";
 import { QueryClient, QueryClientProvider } from "react-query";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { worker } from "./mocks/worker";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const queryClient = new QueryClient();
 
+if (process.env.NODE_ENV === "development") {
+  worker.start();
+}
 root.render(
   <QueryClientProvider client={queryClient}>
     <App />

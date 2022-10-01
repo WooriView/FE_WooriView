@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["airbnb", "eslint:recommended", "plugin:react/recommended"],
+  extends: ["airbnb", "eslint:recommended", "plugin:react/recommended","plugin:prettier/recommended","prettier"],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -11,7 +11,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: "module",
   },
-  plugins: ["react", "jsx-a11y", "import", "functional"],
+  plugins: ["react", "jsx-a11y", "import", "functional","prettier"],
   settings: {
     react: {
       version: "detect",
@@ -21,6 +21,7 @@ module.exports = {
   ignorePatterns: [".eslintrc.js"],
   rules: {
     quotes: ["off", "single"],
+    "no-console": ["error", { allow: ["info", "log"] }],
     "arrow-parens": ["off", "always"],
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": "off",
@@ -33,6 +34,9 @@ module.exports = {
     "react/prop-types": "off",
     "react/require-default-props": "off",
     "react/no-unsafe-optional-chaining": "off",
+    "prettier/prettier": "off",
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
     "import/order": [
       "error",
       {

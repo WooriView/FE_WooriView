@@ -30,8 +30,6 @@ const Title = styled.h1`
   height: 70px;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
-  /* display: flex; */
-  /* align-items: center; */
   text-align: center;
 
   color: #ffffff;

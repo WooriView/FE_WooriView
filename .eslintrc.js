@@ -3,7 +3,13 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["airbnb", "eslint:recommended", "plugin:react/recommended","plugin:prettier/recommended","prettier"],
+  extends: [
+    "airbnb",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+  ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -11,7 +17,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: "module",
   },
-  plugins: ["react", "jsx-a11y", "import", "functional","prettier"],
+  plugins: ["react", "jsx-a11y", "import", "functional", "prettier"],
   settings: {
     react: {
       version: "detect",
@@ -21,6 +27,7 @@ module.exports = {
   ignorePatterns: [".eslintrc.js"],
   rules: {
     quotes: ["off", "single"],
+    "operator-linebreak": "off",
     "no-console": ["error", { allow: ["info", "log"] }],
     "arrow-parens": ["off", "always"],
     "react/react-in-jsx-scope": "off",
@@ -66,8 +73,6 @@ module.exports = {
         },
       },
     ],
-
-    "operator-linebreak": ["error", "after", { overrides: { ":": "before" } }],
     "object-curly-newline": "off",
   },
 };

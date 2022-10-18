@@ -13,14 +13,13 @@ const TitleSection = styled.section`
   justify-content: center;
   align-items: center;
   max-height: 220px;
-  
 `;
 
 const Title = styled.h1`
   height: 120px;
   margin: 50px 0px;
 
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 48px;
@@ -30,6 +29,4 @@ const Title = styled.h1`
   text-align: center;
 
   color: #000000;
-
-
 `;

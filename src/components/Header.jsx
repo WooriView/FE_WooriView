@@ -16,8 +16,8 @@ export default function Header() {
       </HeaderContainer>
       <HeaderBottom>
         <HeaderBottomText>
-          현재 4명의 어르신을 모시고 있습니다. 앞으로 5명의 어르신을 더 모실
-          수 있습니다.
+          현재 4명의 어르신을 모시고 있습니다. 앞으로 5명의 어르신을 더 모실 수
+          있습니다.
         </HeaderBottomText>
       </HeaderBottom>
     </Container>
@@ -28,13 +28,13 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: center;
   max-width: 1440px;
+  margin: 0 auto;
 `;
 const Container = styled.head`
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  
 `;
 const HeaderMenuBox = styled.div`
   display: flex;

@@ -36,10 +36,13 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
+  margin-left: 100px;
   max-width: 1240px;
-  background: red;
   width: 100%;
-  height: 140px;
+  display: flex;
+  padding: 0px;
+  height: 150px;
+  background-color: red;
 `;
 
 const ButtonBox = styled.section`

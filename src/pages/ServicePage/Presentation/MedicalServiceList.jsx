@@ -1,15 +1,27 @@
 import styled from "styled-components";
 
 export default function MedicalServiceList({ medicalData }) {
+  console.log(medicalData);
+  const imageUrl = "/image/heart.png";
+
   return (
-    <Container>
-      <p>{medicalData.title}</p>
-    </Container>
+    <ImageBox>
+      <Image src={imageUrl} />
+    </ImageBox>
   );
 }
 
-const Container = styled.article`
-  max-width: 315px;
+const ImageBox = styled.div`
+  width: 10px;
+  height: 100%;
   display: flex;
-  flex-direction: column;
+  background-color: blue;
+`;
+
+const Image = styled.image`
+  margin-left: 0px;
+  line-height: 30px;
+  width: 90%;
+  height: 90%;
+  background-color: yellow;
 `;

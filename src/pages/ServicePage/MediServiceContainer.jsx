@@ -6,17 +6,17 @@ import ServiceTitle from "../../components/ServiceTitle";
 import MedicalServiceList from "./Presentation/MedicalServiceList";
 
 export default function MediServiceContainer() {
-  const { data: medicalData } = useQuery("mediService", getServiceList);
+  const { data: medicalData } = useQuery("serviceList", getServiceList);
 
   useEffect(() => {
-    // console.log(mediServiceData);
+    console.log(medicalData);
   });
   return (
     <Container>
       <ServiceTitle title="간호 / 의료서비스" />
       <ButtonBox>
         <AddButton>
-          <TextBox>추가/수정</TextBox>
+          <TextBox>수정</TextBox>
         </AddButton>
       </ButtonBox>
       <Content>
@@ -31,18 +31,14 @@ export default function MediServiceContainer() {
 }
 
 const Container = styled.div`
-  max-width: 1440px;
+  max-width: 1040px;
   margin: 0px auto;
 `;
 
 const Content = styled.div`
   margin-left: 100px;
-  max-width: 1240px;
   width: 100%;
-  display: flex;
-  padding: 0px;
-  height: 150px;
-  background-color: red;
+  display: block;
 `;
 
 const ButtonBox = styled.section`
@@ -68,7 +64,7 @@ const AddButton = styled.button`
   padding: var(--button-padding, 0px 0px);
   border-radius: var(--button-radius, 30px);
   background: var(--button-bg-color, #c6e2f2);
-  color: var(--button-color, #ffffff);
+  color: var(--button-color, #405f8c);
   &:active,
   &:hover,
   &:focus {

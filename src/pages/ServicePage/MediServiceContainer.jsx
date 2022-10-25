@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { getServiceList } from "../../Api/serviceApi";
 import ServiceTitle from "../../components/ServiceTitle";
 import MedicalServiceList from "./Presentation/MedicalServiceList";
+import AddServiceTxtArea from "./Presentation/AddServiceTxtArea";
 
 export default function MediServiceContainer() {
   const { data: medicalData } = useQuery("serviceList", getServiceList);
@@ -16,27 +17,7 @@ export default function MediServiceContainer() {
   return (
     <Container>
       <ServiceTitle title="간호 / 의료서비스" />
-      {!hideTxtBox ? <TitleTxtBox /> : <> </>}
-      {!hideTxtBox ? (
-        <ContentDivBox>
-          <ContentTxtBox />
-          <ButtonBox>
-            <AddButton
-              onClick={() => {
-                setTxtBox(!hideTxtBox);
-              }}
-            >
-              <TextBox>
-                서비스
-                <br />
-                추가
-              </TextBox>
-            </AddButton>
-          </ButtonBox>
-        </ContentDivBox>
-      ) : (
-        <> </>
-      )}
+      <AddServiceTxtArea />
       {hideTxtBox ? (
         <AddButton
           onClick={() => {
@@ -69,14 +50,6 @@ const Content = styled.div`
   margin-left: 100px;
   width: 100%;
   display: block;
-`;
-
-const ButtonBox = styled.section`
-  margin-left: 100px;
-  max-width: 1240px;
-  height: 100px;
-  text-align: right;
-  padding-top: 30px;
 `;
 
 // 추가 버튼
@@ -113,34 +86,4 @@ const AddButton = styled.button`
     opacity: 0.5;
     background: var(--button-bg-color, #07a3fb);
   }
-`;
-
-// 서비스 추가 텍스트인풋 박스
-const TitleTxtBox = styled.textarea`
-  margin-left: 100px;
-
-  width: 70%;
-  height: 70px;
-
-  border-radius: 20px;
-  border: 1.8px solid #d9d9d9;
-`;
-
-const ContentDivBox = styled.div`
-  display: flex;
-
-  padding: 0px;
-  width: 100%;
-  height: 120px;
-  background-color: yellow;
-`;
-
-const ContentTxtBox = styled.textarea`
-  margin-left: 100px;
-
-  width: 70%;
-  height: 100px;
-
-  border-radius: 20px;
-  border: 1.8px solid #d9d9d9;
 `;

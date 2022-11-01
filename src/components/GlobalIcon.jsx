@@ -17,6 +17,27 @@ const GlobalIcon = {
       </svg>
     );
   },
+  HoverBorder: () => {
+    return (
+      <svg
+        width="341"
+        height="50"
+        viewBox="0 0 341 50"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          x="1"
+          y="1"
+          width="339"
+          height="48"
+          rx="24"
+          stroke="#C6E2F2"
+          strokeWidth="2"
+        />
+      </svg>
+    );
+  },
 };
 
 export default GlobalIcon;

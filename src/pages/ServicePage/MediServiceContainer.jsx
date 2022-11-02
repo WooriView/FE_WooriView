@@ -17,25 +17,25 @@ export default function MediServiceContainer() {
   return (
     <Container>
       <ServiceTitle title="간호 / 의료서비스" />
-      <AddServiceTxtArea />
-      {hideTxtBox ? (
-        <AddButton
-          onClick={() => {
-            setTxtBox(!hideTxtBox);
-          }}
-        >
-          <TextBox>추가</TextBox>
-        </AddButton>
+      {!hideTxtBox ? (
+        <ButtonBox>
+          <AddButton
+            onClick={() => {
+              setTxtBox(!hideTxtBox);
+            }}
+          >
+            <TextBox>수정</TextBox>
+          </AddButton>
+        </ButtonBox>
       ) : (
-        <> </>
+        <AddServiceTxtArea key={hideTxtBox} />
       )}
-      <Content>
-        {medicalData
-          ? medicalData.data.map(v => (
-              <MedicalServiceList key={v.id} medicalData={v} />
-            ))
-          : "로딩중"}
-      </Content>
+
+      {medicalData
+        ? medicalData.data.map(v => (
+            <MedicalServiceList key={v.id} medicalData={v} />
+          ))
+        : "로딩중"}
     </Container>
   );
 }
@@ -43,14 +43,13 @@ export default function MediServiceContainer() {
 const Container = styled.div`
   max-width: 1040px;
   margin: 0px auto;
-  background-color: red;
 `;
 
-const Content = styled.div`
-  margin-left: 100px;
-  width: 100%;
-  display: block;
-`;
+// const Content = styled.div`
+//   margin-left: 0px;
+//   width: 100%;
+//   display: block;
+// `;
 
 // 추가 버튼
 const TextBox = styled.p`
@@ -64,9 +63,20 @@ const TextBox = styled.p`
 //   margin: 0px auto;
 // `;
 
+const ButtonBox = styled.div`
+  margin-left: 100px;
+
+  padding-top: 20px;
+
+  width: 78%;
+  height: 80px;
+
+  text-align: right;
+`;
+
 const AddButton = styled.button`
-  width: 130px;
-  height: 100px;
+  width: 140px;
+  height: 60px;
   border: none;
   cursor: pointer;
   font-family: "Noto Sans KR", sans-serif;

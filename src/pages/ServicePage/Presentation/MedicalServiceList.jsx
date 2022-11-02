@@ -6,7 +6,9 @@ export default function MedicalServiceList({ medicalData }) {
 
   return (
     <Container>
-      <Image src={imageUrl} />
+      <ImgBox>
+        <Image src={imageUrl} />
+      </ImgBox>
       <ContentBox>
         <Title>{medicalData.title}</Title>
         <Content>{medicalData.content}</Content>
@@ -15,26 +17,35 @@ export default function MedicalServiceList({ medicalData }) {
   );
 }
 
-const Container = styled.article`
-  max-width: 100%;
-  margin-top: 40px;
-  margin-bottom: 90px;
+const Container = styled.div`
   display: flex;
+
+  padding: 0px;
+
+  margin-top: 60px;
+
+  width: 100%;
+  height: 140px;
+`;
+
+const ImgBox = styled.div`
+  flex: 1;
+  text-align: right;
 `;
 
 const Image = styled.img`
-  width: 130px;
-  height: 110px;
+  width: 119px;
+  height: 111px;
   object-fit: fill;
   margin-left: 10px;
-  margin-right: 40px;
   line-height: 30px;
   background: #ffffff;
 `;
 
 const ContentBox = styled.div`
-  margin-top: 4px;
-  width: 100%;
+  flex: 3.5;
+  margin-top: 0px;
+  /* width: 80%; */
   height: 100%;
 `;
 
@@ -46,23 +57,23 @@ const Title = styled.p`
   font-size: 40px;
   font-weight: bold;
 
-  margin: 0px;
+  margin: 30px;
   margin-top: 00px;
 
   height: 40px;
-  width: 100%;
+  width: 90%;
 
   justify-content: center;
 `;
 
 const Content = styled.p`
-  width: 100%;
+  width: 80%;
   height: 40px;
   font-family: "Inter";
   font-style: normal;
   font-size: 22px;
   margin-top: 0px;
   color: #747474;
-  margin: 0px;
+  margin: 30px;
   margin-top: 20px;
 `;

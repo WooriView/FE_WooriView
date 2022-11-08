@@ -28,7 +28,22 @@ export default function MediServiceContainer() {
           </AddButton>
         </ButtonBox>
       ) : (
-        <AddServiceTxtArea key={hideTxtBox} />
+        <AddServiceBox>
+          <AddServiceTxtArea />
+          <ServeButtonBox>
+            <ServeAddButton
+              onClick={() => {
+                setTxtBox(!hideTxtBox);
+              }}
+            >
+              <ServeTextBox>
+                서비스
+                <br />
+                추가
+              </ServeTextBox>
+            </ServeAddButton>
+          </ServeButtonBox>
+        </AddServiceBox>
       )}
 
       {medicalData
@@ -45,23 +60,18 @@ const Container = styled.div`
   margin: 0px auto;
 `;
 
-// const Content = styled.div`
-//   margin-left: 0px;
-//   width: 100%;
-//   display: block;
-// `;
+const AddServiceBox = styled.div`
+  display: flex;
+  padding: 0px;
+  width: 100%;
+  height: 200px;
+`;
 
 // 추가 버튼
 const TextBox = styled.p`
   font-weight: bold;
   margin: 0px auto;
 `;
-
-// 추가하기 버튼
-// const ComplTxtBox = styled.p`
-//   font-weight: bold;
-//   margin: 0px auto;
-// `;
 
 const ButtonBox = styled.div`
   margin-left: 100px;
@@ -96,4 +106,41 @@ const AddButton = styled.button`
     opacity: 0.5;
     background: var(--button-bg-color, #07a3fb);
   }
+`;
+
+// 버튼을 감싼 div
+const ServeButtonBox = styled.div`
+  flex: 0.5;
+  padding-top: 90px;
+`;
+
+// 추가버튼
+const ServeAddButton = styled.button`
+  width: 130px;
+  height: 100px;
+  border: none;
+  cursor: pointer;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: var(--button-font-size, 1.4rem);
+  padding: var(--button-padding, 0px 0px);
+  border-radius: var(--button-radius, 30px);
+  background: var(--button-bg-color, #c6e2f2);
+  color: var(--button-color, #405f8c);
+  &:active,
+  &:hover,
+  &:focus {
+    background: var(--button-hover-bg-color, #07a3fb);
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+    background: var(--button-bg-color, #07a3fb);
+  }
+`;
+
+// 버튼내부의 텍스트
+const ServeTextBox = styled.p`
+  font-weight: bold;
+  margin: 0px auto;
 `;

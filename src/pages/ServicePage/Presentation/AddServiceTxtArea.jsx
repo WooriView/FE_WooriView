@@ -47,8 +47,9 @@ const ContentDivBox = styled.div`
 `;
 
 const ImgBox = styled.div`
-  flex: 1;
-  text-align: right;
+  flex: 0.7;
+  padding: 0px;
+  text-align: left;
 `;
 
 const Image = styled.img`
@@ -56,7 +57,7 @@ const Image = styled.img`
   height: 111px;
 
   margin-top: 30px;
-  margin-left: 10px;
+  margin-left: 0px;
 
   object-fit: fill;
   line-height: 30px;
@@ -72,7 +73,7 @@ const TextAreaBox = styled.div`
 
 // 제목 텍스트에어리어
 const TitleTxtBox = styled.textarea`
-  margin-left: 30px;
+  margin-left: 0px;
   margin-bottom: 12px;
 
   width: 87%;
@@ -88,8 +89,7 @@ const TitleTxtBox = styled.textarea`
 
 // 내용부분의 텍스트 에어리어
 const ContentTxtBox = styled.textarea`
-  margin-left: 30px;
-
+  margin-left: 0px;
   width: 85%;
   height: 62px;
 

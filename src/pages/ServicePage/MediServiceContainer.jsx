@@ -62,9 +62,13 @@ const Container = styled.div`
 
 const AddServiceBox = styled.div`
   display: flex;
+  margin-left: 110px;
   padding: 0px;
-  width: 100%;
-  height: 200px;
+  width: 90%;
+  height: 220px;
+  border-style: solid;
+  border-width: 0px;
+  border-bottom-width: 1px;
 `;
 
 // 추가 버튼

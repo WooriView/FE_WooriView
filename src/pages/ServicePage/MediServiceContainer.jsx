@@ -46,11 +46,23 @@ export default function MediServiceContainer() {
         </AddServiceBox>
       )}
 
-      {medicalData
-        ? medicalData.data.map(v => (
-            <MedicalServiceList key={v.id} medicalData={v} />
-          ))
-        : "로딩중"}
+      <ServContentBox>
+        {medicalData
+          ? medicalData.data.map(v => (
+              <>
+                <MedicalServiceList key={v.id} medicalData={v} />
+                <BtnContainer>
+                  <AddBtnBox>
+                    <AddBtn />
+                  </AddBtnBox>
+                  <DelBtnBox>
+                    <DelBtn />
+                  </DelBtnBox>
+                </BtnContainer>
+              </>
+            ))
+          : "로딩중"}
+      </ServContentBox>
     </Container>
   );
 }
@@ -148,3 +160,32 @@ const ServeTextBox = styled.p`
   font-weight: bold;
   margin: 0px auto;
 `;
+
+const ServContentBox = styled.div`
+  margin-top: 60px;
+  margin-left: 110px;
+  width: 100%;
+  height: 140px;
+  background-color: green;
+`;
+
+const BtnContainer = styled.div`
+  flex: 0.5;
+  /* width: 100%; */
+  width: 40px;
+  height: 140px;
+  background-color: red;
+`;
+const AddBtnBox = styled.div`
+  width: 100%;
+  height: 30px;
+`;
+
+const DelBtnBox = styled.div``;
+
+const AddBtn = styled.button`
+  width: 100%;
+  height: 100%;
+`;
+
+const DelBtn = styled.button``;

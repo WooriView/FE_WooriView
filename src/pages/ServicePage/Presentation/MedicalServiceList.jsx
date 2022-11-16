@@ -13,25 +13,18 @@ export default function MedicalServiceList({ medicalData }) {
         <Title>{medicalData.title}</Title>
         <Content>{medicalData.content}</Content>
       </ContentBox>
-      <BtnContainer>
-        <AddBtnBox>
-          <AddBtn />
-        </AddBtnBox>
-        <DelBtnBox>
-          <DelBtn />
-        </DelBtnBox>
-      </BtnContainer>
     </Container>
   );
 }
 
 const Container = styled.div`
   display: flex;
+  flex: 1;
 
   padding: 0px;
 
-  margin-top: 60px;
-  margin-left: 110px;
+  /* margin-top: 60px;
+  margin-left: 110px; */
 
   width: 91%;
   height: 140px;
@@ -39,7 +32,7 @@ const Container = styled.div`
 `;
 
 const ImgBox = styled.div`
-  /* flex: 0.7; */
+  flex: 0.7;
   width: 1000px;
   text-align: left;
 `;
@@ -54,7 +47,7 @@ const Image = styled.img`
 `;
 
 const ContentBox = styled.div`
-  /* flex: 2.4; */
+  flex: 3;
   margin-top: 0px;
   width: 4300px;
   height: 100%;
@@ -88,23 +81,3 @@ const Content = styled.p`
   margin: 0px;
   margin-top: 20px;
 `;
-
-const BtnContainer = styled.div`
-  /* flex: 1.1; */
-  width: 100%;
-  height: 140px;
-  background-color: red;
-`;
-const AddBtnBox = styled.div`
-  width: 100%;
-  height: 30px;
-`;
-
-const DelBtnBox = styled.div``;
-
-const AddBtn = styled.button`
-  width: 100%;
-  height: 100%;
-`;
-
-const DelBtn = styled.button``;

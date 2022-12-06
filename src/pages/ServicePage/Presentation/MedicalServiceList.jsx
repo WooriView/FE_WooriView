@@ -1,7 +1,27 @@
 import styled from "styled-components";
+import Swal from "sweetalert2";
 
 export default function MedicalServiceList({ medicalData, flag }) {
   const imageUrl = "/image/heart.png";
+
+  const onClickGoOut = () => {
+    Swal.fire({
+      // icon: "warning",
+      title: "아래 서비스를 삭제하시겠어요?",
+      text: "",
+      confirmButtonText: "수정",
+      showCloseButton: false,
+      showCancelButton: false,
+      // cancelButtonText: "취소",
+    }).then(res => {
+      /* Read more about isConfirmed, isDenied below */
+      if (res.isConfirmed) {
+        // 삭제 요청 처리
+      } else {
+        // 취소
+      }
+    });
+  };
 
   return (
     <Container>
@@ -15,7 +35,11 @@ export default function MedicalServiceList({ medicalData, flag }) {
       {!flag ? (
         <BtnContainer>
           <AddBtnBox>
-            <AddBtn>
+            <AddBtn
+              onClick={() => {
+                onClickGoOut();
+              }}
+            >
               <TextBox>수정</TextBox>
             </AddBtn>
           </AddBtnBox>
